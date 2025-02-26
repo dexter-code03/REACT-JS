@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 bg-gray-800 text-orange-500">
-      <h1 className="text-white text-center py-1 my-3 ">Password Generator</h1>
+      <h1 className="text-white text-center font-bold text-2xl py-1 my-3 ">Password Generator</h1>
       <div className="flex shadow rounded-lg overflow-hidden mb-4">
         <input
           type="text"
@@ -37,11 +37,31 @@ function App() {
           readOnly
           ref={passref}
         />
-        <button className=" outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0 "
-        onClick={()=>(copypassword())}
+        <button 
+        className="outline-none bg-blue-700 text-white px-4 py-2 shrink-0
+          transition-all duration-300 ease-in-out
+          hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-500/50
+          active:transform active:scale-95
+          focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
+          rounded-r-lg font-semibold
+          flex items-center gap-2"
+        onClick={() => copypassword()}
+      >
+        <span>Copy</span>
+        <svg 
+          className="w-4 h-4" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
         >
-          copy
-        </button>
+          <path 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            strokeWidth="2" 
+            d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"
+          />
+        </svg>
+      </button>
       </div>
       <div className="flex text-sm gap-x-2">
         <div className="flex items-center gap-x-1">
